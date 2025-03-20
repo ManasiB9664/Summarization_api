@@ -11,6 +11,10 @@ import re
 # Initialize the FastAPI app
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Summarization API. Use /summarize/ to summarize text."}
+
 # Download necessary NLTK data (can be done once, but included here for completeness)
 nltk.download('punkt')
 nltk.download('stopwords')
